@@ -1,26 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void solve()
+void solve() 
 {
 
     int n;
     cin >> n;
 
-    vector<int> v(n + 1, 0);
-    v[0] = 1;
-
-    int MOD = 1000000007;
+    vector<int> dp(n+1, 0);
+    dp[0] = 1;
+    int MOD = 1e9 + 7;
 
     for (int i=1; i<=n; i++) {
-        for (int j=1; j<= 6; j++) {
+        for (int j=1; j<=6; j++) {
             if (i - j >= 0) {
-                v[i] = (v[i] + v[i - j]) % MOD;
+                dp[i] += dp[i - j];
+                dp[i] %= MOD;
             }
         }
     }
 
-    cout << v[n] << endl;
+    cout << dp[n];
 
 }
 

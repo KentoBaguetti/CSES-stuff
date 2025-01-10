@@ -50,6 +50,25 @@
 		"__hash_table": "cpp",
 		"__node_handle": "cpp",
 		"complex": "cpp",
-		"sstream": "cpp"
+		"sstream": "cpp",
+		"__tree": "cpp",
+		"cfenv": "cpp",
+		"charconv": "cpp",
+		"cinttypes": "cpp",
+		"condition_variable": "cpp",
+		"csetjmp": "cpp",
+		"csignal": "cpp",
+		"forward_list": "cpp",
+		"fstream": "cpp",
+		"future": "cpp",
+		"iomanip": "cpp",
+		"list": "cpp",
+		"map": "cpp",
+		"regex": "cpp",
+		"scoped_allocator": "cpp",
+		"set": "cpp",
+		"typeindex": "cpp",
+		"unordered_set": "cpp",
+		"valarray": "cpp"
 	}
 }

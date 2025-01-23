@@ -2,7 +2,6 @@
 using namespace std;
 
 vector<int> insertionSort(vector<int>& arr) {
-
     for (int i = 1; i < arr.size(); i++) {
         int val = arr[i];
         int j = i - 1;
@@ -35,9 +34,9 @@ void solve()
     srand(time(0));
     vector<int> arr(30);
     generate(arr.begin(), arr.end(), []() { return rand() % 100; });
-    vector<int> sortedList = insertionSortSwap(arr);
+    vector<int> sortedList = insertionSort(arr);
 
-    cout << "Insertion Swap Sort: [";
+    cout << "[";
     for (int i = 0; i < sortedList.size() - 1; i++) {
         cout << sortedList[i] << ", ";
     }

@@ -26,9 +26,53 @@ vector<int> selectionSort(vector<int>& arr) {
     return arr;
 }
 
+vector<int> selectionSortWithHelper(vector<int>& arr) {
+    for (int i = 0; i < arr.size(); i++) {
+        int minIndex = indexOfMin(arr, i);
+        int temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
+    return arr;
+}
+
+vector<int> insertionSort(vector<int>& arr) {
+    for (int i = 1; i < arr.size(); i++) {
+        int j = i - 1;
+        int val = arr[i];
+        while (j >= 0 && arr[j] > val) {
+            arr[j + 1] = arr[j];
+            arr[j] = val;
+            j--;
+        }
+    }
+    return arr;
+}
+
+vector<int> otherInsertionSort(vector<int>& arr) {
+    for (int i = 1; i < arr.size(); i++) {
+        int val = arr[i];
+        int j = i - 1;
+        while (j >= 0 && arr[j] > val) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = val;
+    }
+    return arr;
+}
+
 int main() {
 
-    
+    vector<int> arr(30);
+    generate(arr.begin(), arr.end(), []() { return rand() % 100; });
+    vector<int> sortedList = otherInsertionSort(arr);
+
+    cout << "[";
+    for (int i = 0; i < sortedList.size() - 1; i++) {
+        cout << sortedList[i] << ", ";
+    }
+    cout << sortedList[sortedList.size() - 1] << "]";
 
     return 0;
 }

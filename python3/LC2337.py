@@ -41,8 +41,32 @@ def canChange(start, target):
     return True
 
 
-if __name__ == "__main__":
-    x = "_L__R__R_"
-    y = "L______RR"
+def canChangeTP(start, target):
+    i = 0
+    j = 0
 
-    print(canChange(x, y))
+    while i < len(start) and j < len(target):
+        while j < len(target) and target[j] == "_":
+            j += 1
+        while i < len(target) and start[i] == "_":
+            i += 1
+
+        if j < len(target) and i < len(start) and start[i] != target[j]:
+            return False
+        if j < len(target) and i < len(start) and start[i] == "L" and target[j] == "L":
+            if i < j:
+                return False
+        if j < len(target) and i < len(start) and start[i] == "R" and target[j] == "R":
+            if i > j:
+                return False
+        i += 1
+        j += 1
+
+    return True
+
+
+if __name__ == "__main__":
+    x = "_L__R__R_L"
+    y = "L______RR_"
+
+    print(canChangeTP(x, y))

@@ -1,3 +1,16 @@
- srand(time(0));
-    vector<int> arr(100);
-    generate(arr.begin(), arr.end(), []() { return rand() % 100; });
+void MakeRotateRight(TreeNode* nd){
+    if (nd == nullptr){
+        return;
+    }
+    
+    // Process children first
+    if (nd->left != nullptr){
+        MakeRotateLeft(nd->left);
+    }
+    if (nd->right != nullptr){
+        MakeRotateRight(nd->right);
+    }
+    while(nd -> left != nullptr){
+        nd = rotateRight(nd);
+    }
+}

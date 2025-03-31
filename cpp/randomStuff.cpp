@@ -3,6 +3,31 @@
 #include <iostream>
 using namespace std;
 
+struct BSTHNode{
+    BSTHNode* left;
+    BSTHNode* right;
+    int data; 
+};
+
+struct BST{
+    BSTHNode* root;
+};
+
+
+BSTHNode* MakeRightSpine (BSTHNode* nd) {
+    return nullptr;
+}
+
+BSTHNode* RotateLeft ()
+
+
+
+BSTHNode* Balance (BSTHNode* nd){
+  
+
+
+}
+
 void Merge(vector<int>& v, int left, int mid, int right) {
 
     int first1 = left;

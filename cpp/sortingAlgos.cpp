@@ -205,4 +205,3 @@ int main() {
     cout << sortedList[sortedList.size() - 1] << "]";
 
     return 0;
-}
